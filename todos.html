@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add ToDo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="js/api.js"></script>
+    <script src="js/new_todo.js" defer></script>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="todos.html">View ToDos</a>
+        <a href="new_todo.html">Add ToDo</a>
+    </div>
+
+    <div class="window">
+        <div class="title-bar">Add ToDo</div>
+        <div class="window-content">
+            <form id="newTodoForm">
+                <div>
+                    <label for="userDropdown">User:</label>
+                    <select id="userDropdown"></select>
+                </div>
+                <div>
+                    <label for="categoryDropdown">Category:</label>
+                    <select id="categoryDropdown"></select>
+                </div>
+                <div>
+                    <label for="priorityDropdown">Priority:</label>
+                    <select id="priorityDropdown">
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea id="description" rows="4" placeholder="Enter task details..."></textarea>
+                </div>
+                <div>
+                    <label for="deadline">Deadline:</label>
+                    <input type="text" id="deadline" placeholder="Select a date">
+                </div>
+                <button type="submit">Add ToDo</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the calendar popup
+        document.addEventListener("DOMContentLoaded", () => {
+            flatpickr("#deadline", {
+                dateFormat: "Y-m-d",
+            });
+        });
+    </script>
+</body>
+
+</html>
